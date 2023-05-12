@@ -2,6 +2,7 @@
 批量将icns文件转成png文件
 Batch convert ICNS files to PNG files
 """
+
 import os
 
 try:
@@ -26,9 +27,9 @@ if __name__ == "__main__":
         image_256 = image.copy().resize((256, 256))
         image_32 = image.copy().resize((32, 32))
         image_name = os.path.splitext(file)[0]
-        image_512_path = os.path.join(png_dir, image_name + "_512.png")
-        image_256_path = os.path.join(png_dir, image_name + "_256.ico")
-        image_32_path = os.path.join(png_dir, image_name + "_32.ico")
+        image_512_path = os.path.join(png_dir, f"{image_name}_512.png")
+        image_256_path = os.path.join(png_dir, f"{image_name}_256.ico")
+        image_32_path = os.path.join(png_dir, f"{image_name}_32.ico")
         image_512.save(image_512_path, "PNG")
         image_256.save(image_256_path, "ICO")
         image_32.save(image_32_path, "ICO")
